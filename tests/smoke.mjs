@@ -1,0 +1,1 @@
+import test from "node:test";import assert from "node:assert/strict";import fs from "node:fs";test("CP1 has accessible landing and no credentials",()=>{const h=fs.readFileSync("public/index.html","utf8");assert.match(h,/lang="vi"/);assert.match(h,/aria-live="polite"/);assert.match(h,/Chưa xác minh/);assert.doesNotMatch(h,/CLOUDFLARE_API_TOKEN\s*=/)});
